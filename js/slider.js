@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     $('.glazing_slider').slick({
         infinite: true,
