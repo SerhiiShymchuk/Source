@@ -1,19 +1,22 @@
+import checkNumberInputs from './checkNumberInputs.js'
+
 const forms = () => {
     const form = document.querySelectorAll('form')
     const input = document.querySelectorAll('input')
-    const phoneInput = document.querySelectorAll('input[name="user_phone"]')
+    //const phoneInput = document.querySelectorAll('input[name="user_phone"]')
     const message = {
         loading: 'Загрузка',
         success: 'Спасибо скоро мы с вами свяжемся',
         failure: 'Что-то пошло не так',
     }
 
-    //валідація інпутів для номера телефону
-    phoneInput.forEach(inputElem => {
-        inputElem.addEventListener('input', () => {
-            inputElem.value = inputElem.value.replace(/\D/, '')
-        })
-    })
+    // валідація інпутів для номера телефону
+    // phoneInput.forEach(inputElem => {
+    //     inputElem.addEventListener('input', () => {
+    //         inputElem.value = inputElem.value.replace(/\D/, '')
+    //     })
+    // })
+    checkNumberInputs('input[name="user_phone"]')
 
     form.forEach(formElem => {
         formElem.addEventListener('submit', (e) => {
