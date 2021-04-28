@@ -3,6 +3,7 @@ import tabs from './modules/tab.js'
 import forms from './modules/forms.js'
 import changeModalState from './modules/changeModalState.js'
 import {timer} from './modules/timer.js'
+import {images} from './modules/images.js'
 'use strict'
 
 let modalState = {}
@@ -14,3 +15,4 @@ tabs('.balcon_icons', '.balcon_icons_img', '.big_img>img', 'do_image_more', 'inl
 forms(modalState)
 const deadline = '2025-01-30'
 timer('.container1', deadline)
+images()

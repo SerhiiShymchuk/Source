@@ -22,6 +22,8 @@ const timer = (selector, deadline) => {
         const seconds = timer.querySelector('#seconds')
         const interval = setInterval(updateClock, 1000)
 
+        updateClock() // шоб таймер показував джава скриптові значення до того як сетінтервал запрацює (через 1 секунду). Якщо цього не зробити то буде показуватись значення із верстки першими.
+
         function updateClock() {
             const timeObj = getTimeRemaining(deadline)
             days.innerText = addZeroToTimer(timeObj.days)
