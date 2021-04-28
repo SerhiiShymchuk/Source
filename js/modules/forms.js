@@ -1,6 +1,6 @@
 import checkNumberInputs from './checkNumberInputs.js'
 
-const forms = () => {
+const forms = (modalState) => {
     const form = document.querySelectorAll('form')
     const input = document.querySelectorAll('input')
     //const phoneInput = document.querySelectorAll('input[name="user_phone"]')
@@ -27,6 +27,11 @@ const forms = () => {
             formElem.append(divMessage)
 
             const formData = new FormData(formElem)
+            if (formElem.getAttribute('data-calc') === 'end') {
+                for (const key in modalState) {
+                    formData.append(key, modalState[key])
+                }
+            }
 
             postData('./assets/server.php', formData)
             .then(res => {
